@@ -9,7 +9,7 @@ namespace SortAlgorithm.model
     public class SortAlgorithms
     {
 
-        public void Merge(int[] list, int p, int q, int r)
+        private void Merge(int[] list, int p, int q, int r)
         {
             int n1 = q - p + 1;
             int n2 = r - q;
@@ -19,7 +19,7 @@ namespace SortAlgorithm.model
 
             for (int z = 0; z < n1; z++)
             {
-                left[z] = list[p + z]; 
+                left[z] = list[p + z];
             }
 
             for (int w = 0; w < n2; w++)
@@ -31,7 +31,7 @@ namespace SortAlgorithm.model
             int j = 0;
             int k = p;
 
-            while (i<n1 && j<n2)
+            while (i < n1 && j < n2)
             {
                 if (left[i] < right[j])
                 {
@@ -59,22 +59,36 @@ namespace SortAlgorithm.model
                 j++;
                 k++;
             }
-           
+
 
         }
 
         public void MergeSort(int[] list, int p, int r)
         {
-            if (p<r)
+            if (p < r)
             {
                 int q = (p + r) / 2;
                 MergeSort(list, p, q);
-                MergeSort(list, q+1, r);
+                MergeSort(list, q + 1, r);
                 Merge(list, p, q, r);
             }
         }
 
-
+        public void BubbleSort(int[] list)
+        {
+            for(int i=0;i<list.Length - 1; i++)
+            {
+                for (int j=0;j<list.Length - i - 1;j++)
+                {
+                    if (list[j] > list[j + 1])
+                    {
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }
+                }
+            }
+        }
 
     }
 }
