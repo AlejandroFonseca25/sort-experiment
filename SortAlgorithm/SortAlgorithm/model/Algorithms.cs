@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithm.Model
 {
-    class SortAlgorithm
+    public class Algorithms
     {
+
+        public Algorithms() { }
         private void Merge(int[] list, int p, int q, int r)
         {
             int n1 = q - p + 1;

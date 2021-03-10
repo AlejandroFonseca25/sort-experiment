@@ -1,0 +1,17 @@
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\SortAlgorithmTest.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\SortAlgorithmTest.pdb
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\SortAlgorithm.exe
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\SortAlgorithm.pdb
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\SortAlgorithm.exe.config
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\obj\Debug\SortAlgorithmTest.csprojAssemblyReference.cache
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\obj\Debug\SortAlgorithmTest.csproj.CoreCompileInputs.cache
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\obj\Debug\SortAlgorithmTest.csproj.CopyComplete
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\obj\Debug\SortAlgorithmTest.dll
+C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithmTest\obj\Debug\SortAlgorithmTest.pdb
