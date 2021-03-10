@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace SortAlgorithm.model
+namespace SortAlgorithm.Model
 {
-    public class SortAlgorithms
+    class SortAlgorithms
     {
-
         private void Merge(int[] list, int p, int q, int r)
         {
             int n1 = q - p + 1;
@@ -76,9 +73,9 @@ namespace SortAlgorithm.model
 
         public void BubbleSort(int[] list)
         {
-            for(int i=0;i<list.Length - 1; i++)
+            for (int i = 0; i < list.Length - 1; i++)
             {
-                for (int j=0;j<list.Length - i - 1;j++)
+                for (int j = 0; j < list.Length - i - 1; j++)
                 {
                     if (list[j] > list[j + 1])
                     {
