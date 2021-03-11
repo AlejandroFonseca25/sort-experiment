@@ -5,3 +5,10 @@ C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithm\
 C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csproj.CoreCompileInputs.cache
 C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.exe
 C:\Users\David Steven\Documents\GIT\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.pdb
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.exe.config
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.exe
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.pdb
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csprojAssemblyReference.cache
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.exe
+C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.pdb
