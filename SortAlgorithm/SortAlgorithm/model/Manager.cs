@@ -21,7 +21,7 @@ namespace SortAlgorithm.Model
             };
         }
 
-        public void MergeSortExperiment()
+        public List<String> MergeSortExperiment()
         {
             List<String> data = new List<string>();
 
@@ -36,33 +36,25 @@ namespace SortAlgorithm.Model
 
                     for (int i = 0; i < 100; i++)
                     {
-                        var sw = new Stopwatch();
-                        
-                        long kbAtExecution = GC.GetTotalMemory(true) / 1024;
-
+                        var sw = new Stopwatch();           
                         sw.Start();
-                        // do stuff that uses memory here 
+
                         st.MergeSort(array, 0, (array.Length) - 1);
+
                         sw.Stop();
-
-                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
-                        long memoryUsed = kbAfter1 - kbAtExecution;
-
                         var ts = sw.ElapsedMilliseconds;
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts + ","+memoryUsed;
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
                         data.Add(info);
-
-                        Console.WriteLine("info: " + info);
 
                     }
                 }
             }
 
-            WriteData(data);
+            return data;
         }
 
-        public void BubbleSortExperiment()
+        public List<String> BubbleSortExperiment()
         {
             List<String> data = new List<string>();
 
@@ -78,27 +70,20 @@ namespace SortAlgorithm.Model
                     for (int i = 0; i < 100; i++)
                     {
                         Stopwatch sw = new Stopwatch();
-
-                        long kbAtExecution = GC.GetTotalMemory(true) / 1024;
-
                         sw.Start();
+
                         st.BubbleSort(array);
-                        sw.Stop();
 
-                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
-                        long memoryUsed = kbAfter1 - kbAtExecution;
-
+                        sw.Stop();            
                         var ts = sw.ElapsedMilliseconds;
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts+ "," + memoryUsed;
-
-                        Console.WriteLine("info: " + info);
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
                         data.Add(info);
                     }
                 }
             }
 
-            WriteData(data);
+            return data;
         }
 
         public int[] GenerateArray(int lenght, int status)
@@ -152,9 +137,8 @@ namespace SortAlgorithm.Model
                     string arraySize = array[2];
                     string status = array[3];
                     string time = array[4];
-                    string memory = array[5];
-
-                    string csvRow = string.Format("{0},{1},{2},{3},{4},{5}", algorithm,language,arraySize,status,time,memory);
+             
+                    string csvRow = string.Format("{0},{1},{2},{3},{4}", algorithm,language,arraySize,status,time);
 
                     stream.WriteLine(csvRow);
                 }

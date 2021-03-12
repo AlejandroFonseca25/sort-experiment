@@ -11,9 +11,12 @@ namespace SortAlgorithm
     {
         static void Main(string[] args)
         {
+            
             Manager manager = new Manager();
-            manager.MergeSortExperiment();
-            manager.BubbleSortExperiment();
+            List<String> mList = manager.MergeSortExperiment();
+            List<String> bList = manager.BubbleSortExperiment();
+            mList.AddRange(bList);
+            manager.WriteData(mList);
            
            
         }
