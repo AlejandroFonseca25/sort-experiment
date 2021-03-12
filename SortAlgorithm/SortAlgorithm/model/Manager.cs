@@ -86,6 +86,7 @@ namespace SortAlgorithm.Model
 
         public int[] GenerateArray(int lenght, int status)
         {
+
             int size = lenghts[lenght];
             int[] array = new int[size];
             Random random = new Random();
@@ -93,21 +94,30 @@ namespace SortAlgorithm.Model
             int max = int.MaxValue;
             int min = 0;
 
-            for (int i = 0; i < size; i++)
+            switch (status)
             {
-                int number = random.Next(min, max);
-                array[i] = number;
-
-                if (status == 2)//orden descendiente
-                {
-                    max = (number + max) / 2;
-                }
-                else if (status == 3)// orden ascendiente
-                {
-                    min = (min + number) / 2;
-                }
+                case 2:
+                    // orden descendiente
+                    for(int i = 0; i < size; i++)
+                    {
+                        array[i] = size - i;
+                    }
+                    break;
+                case 3:
+                    //orden ascendente;
+                    for (int i = 0; i < size; i++)
+                    {
+                        array[i] = i + 1; 
+                    }
+                    break;
+                default:
+                    //aleatorio
+                    for (int i = 0; i < size; i++)
+                    {
+                        array[i] = random.Next(min,max);
+                    }
+                    break;
             }
-
             return array;
         }
 
