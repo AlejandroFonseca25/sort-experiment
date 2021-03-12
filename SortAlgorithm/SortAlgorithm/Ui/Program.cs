@@ -12,8 +12,9 @@ namespace SortAlgorithm
         static void Main(string[] args)
         {
             Manager manager = new Manager();
-            manager.BubbleSortExperiment();
+            //manager.BubbleSortExperiment();
             manager.MergeSortExperiment();
+           
         }
     }
 }

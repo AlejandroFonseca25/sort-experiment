@@ -12,3 +12,10 @@ C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\Sort
 C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.exe
 C:\Users\User\Desktop\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.pdb
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.exe.config
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.exe
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\bin\Debug\SortAlgorithm.pdb
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csprojAssemblyReference.cache
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.exe
+C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\obj\Debug\SortAlgorithm.pdb

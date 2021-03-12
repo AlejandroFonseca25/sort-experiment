@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 namespace SortAlgorithm.Model
 {
@@ -37,25 +38,19 @@ namespace SortAlgorithm.Model
                     {
                         var sw = new Stopwatch();
                         
-                        long kbAtExecution = GC.GetTotalMemory(false) / 1024;
+                        long kbAtExecution = GC.GetTotalMemory(true) / 1024;
 
                         sw.Start();
                         // do stuff that uses memory here 
                         st.MergeSort(array, 0, (array.Length) - 1);
                         sw.Stop();
 
-                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
-                        long kbAfter2 = GC.GetTotalMemory(true) / 1024;
-
-                        Console.WriteLine(kbAtExecution + " Started with this kb.");
-                        Console.WriteLine(kbAfter1 + " After the test.");
-                        Console.WriteLine(kbAfter1 - kbAtExecution + " Amt. Added.");
-                        Console.WriteLine(kbAfter2 + " Amt. After Collection");
-                        Console.WriteLine(kbAfter2 - kbAfter1 + " Amt. Collected by GC.");
+                        long kbAfter1 = GC.GetTotalMemory(true) / 1024;
+                        long memoryUsed = kbAfter1 - kbAtExecution;
 
                         var ts = sw.ElapsedMilliseconds;
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts + ","+memoryUsed;
                         data.Add(info);
 
                         Console.WriteLine("info: " + info);
@@ -84,7 +79,7 @@ namespace SortAlgorithm.Model
                     {
                         Stopwatch sw = new Stopwatch();
 
-                        long kbAtExecution = GC.GetTotalMemory(false) / 1024;
+                        long kbAtExecution = GC.GetTotalMemory(true) / 1024;
 
                         sw.Start();
  
@@ -93,17 +88,12 @@ namespace SortAlgorithm.Model
                         st.BubbleSort(array);
                         sw.Stop();
 
-                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
-                        long kbAfter2 = GC.GetTotalMemory(true) / 1024;
+                        long kbAfter1 = GC.GetTotalMemory(true) / 1024;
+                        long memoryUsed = kbAfter1 - kbAtExecution;
 
-                        Console.WriteLine(kbAtExecution + " Started with this kb.");
-                        Console.WriteLine(kbAfter1 + " After the test.");
-                        Console.WriteLine(kbAfter1 - kbAtExecution + " Amt. Added.");
-                        Console.WriteLine(kbAfter2 + " Amt. After Collection");
-                        Console.WriteLine(kbAfter2 - kbAfter1 + " Amt. Collected by GC.");
                         var ts = sw.ElapsedMilliseconds;
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts+ "," + memoryUsed;
 
                         Console.WriteLine("info: " + info);
                         data.Add(info);
@@ -153,6 +143,25 @@ namespace SortAlgorithm.Model
 
         public void WriteData(List<string> data)
         {
+            var file = @"C:\Users\prestamo\Documents\GitHub\sort-experiment\SortAlgorithm\SortAlgorithm\Data\Output.csv";
+            using (var stream = File.CreateText(file))
+            {
+                foreach (string current in data)
+                {
+                    string[] array = current.Split(',');
+
+                    string algorithm = array[0];
+                    string language = array[1];
+                    string arraySize = array[2];
+                    string status = array[3];
+                    string time = array[4];
+                    string memory = array[5];
+
+                    string csvRow = string.Format("{0},{1},{2},{3},{4},{5}", algorithm,language,arraySize,status,time,memory);
+
+                    stream.WriteLine(csvRow);
+                }
+            }
         }
     }
 }
