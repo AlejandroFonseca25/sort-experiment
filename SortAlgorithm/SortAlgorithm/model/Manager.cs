@@ -36,6 +36,7 @@ namespace SortAlgorithm.Model
                     for (int i = 0; i < 100; i++)
                     {
                         var sw = new Stopwatch();
+                        sw.Start();
                         var timeOne = sw.ElapsedMilliseconds;
                         st.MergeSort(array, 0, (array.Length) - 1);
                         var timeTwo = sw.ElapsedMilliseconds;
@@ -43,7 +44,7 @@ namespace SortAlgorithm.Model
                         sw.Stop();
                         var timeElapsed = timeTwo - timeOne;
 
-                        string info = algorithm + "," + language + "," + j + "," + k;
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
                         data.Add(info);
                     }
                 }
@@ -71,12 +72,10 @@ namespace SortAlgorithm.Model
                         sw.Start();
                         st.BubbleSort(array);
                         sw.Stop();
-                        TimeSpan ts = sw.Elapsed;
-                        string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                        ts.Hours, ts.Minutes, ts.Seconds,
-                        ts.Milliseconds / 10);
+                        var ts = sw.ElapsedMilliseconds;
+                     
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + elapsedTime;
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
                         data.Add(info);
                     }
                 }
