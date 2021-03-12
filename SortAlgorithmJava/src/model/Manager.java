@@ -1,5 +1,8 @@
 package model;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
+import java.lang.management.MemoryUsage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -33,15 +36,24 @@ public class Manager {
 
                 for (int i = 0; i < 100; i++)
                 {
-                    
-                    var timeOne = System.currentTimeMillis();
+                	MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
+                    MemoryUsage beforeHeapMemoryUsage = mbean.getHeapMemoryUsage();
+                	
+                    long timeOne = System.currentTimeMillis();
+
                     st.MergeSort(array, 0, (array.length) - 1);
-                    var timeTwo = System.currentTimeMillis();
                     
-                    var timeElapsed = timeTwo - timeOne;
+                    long timeTwo = System.currentTimeMillis();
+                    
+                    MemoryUsage afterHeapMemoryUsage = mbean.getHeapMemoryUsage();
+                    long consumed =  afterHeapMemoryUsage.getUsed() - beforeHeapMemoryUsage.getUsed();
+                    System.out.println("Total consumed Memory:" + consumed);
+                    
+                    long timeElapsed = timeTwo - timeOne;
 
                     String info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
                     data.add(info);
+                    System.out.println("info " + info);
                 }
             }
         }
@@ -64,15 +76,24 @@ public class Manager {
 
                 for (int i = 0; i < 100; i++)
                 {
-                   
-                    var timeOne = System.currentTimeMillis();
-                    st.BubbleSort(array);
-                    var timeTwo = System.currentTimeMillis();
+                	MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
+                    MemoryUsage beforeHeapMemoryUsage = mbean.getHeapMemoryUsage();
                     
-                    var timeElapsed = timeTwo - timeOne; 
+                    long timeOne = System.currentTimeMillis();
+                    
+                    st.BubbleSort(array);
+                    
+                    long timeTwo = System.currentTimeMillis();
+                    
+                    MemoryUsage afterHeapMemoryUsage = mbean.getHeapMemoryUsage();
+                    long consumed =  afterHeapMemoryUsage.getUsed() - beforeHeapMemoryUsage.getUsed();
+                    System.out.println("Total consumed Memory:" + consumed);
+                    
+                    long timeElapsed = timeTwo - timeOne; 
                     
                     String info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
                     data.add(info);
+                    System.out.println("info " + info);
                 }
             }
         }

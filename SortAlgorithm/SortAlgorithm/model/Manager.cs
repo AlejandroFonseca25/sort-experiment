@@ -36,16 +36,30 @@ namespace SortAlgorithm.Model
                     for (int i = 0; i < 100; i++)
                     {
                         var sw = new Stopwatch();
+                        
+                        long kbAtExecution = GC.GetTotalMemory(false) / 1024;
+
                         sw.Start();
-                        var timeOne = sw.ElapsedMilliseconds;
+                        // do stuff that uses memory here 
                         st.MergeSort(array, 0, (array.Length) - 1);
-                        var timeTwo = sw.ElapsedMilliseconds;
-
                         sw.Stop();
-                        var timeElapsed = timeTwo - timeOne;
 
-                        string info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
+                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
+                        long kbAfter2 = GC.GetTotalMemory(true) / 1024;
+
+                        Console.WriteLine(kbAtExecution + " Started with this kb.");
+                        Console.WriteLine(kbAfter1 + " After the test.");
+                        Console.WriteLine(kbAfter1 - kbAtExecution + " Amt. Added.");
+                        Console.WriteLine(kbAfter2 + " Amt. After Collection");
+                        Console.WriteLine(kbAfter2 - kbAfter1 + " Amt. Collected by GC.");
+
+                        var ts = sw.ElapsedMilliseconds;
+
+                        string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
                         data.Add(info);
+
+                        Console.WriteLine("info: " + info);
+
                     }
                 }
             }
@@ -69,13 +83,29 @@ namespace SortAlgorithm.Model
                     for (int i = 0; i < 100; i++)
                     {
                         Stopwatch sw = new Stopwatch();
+
+                        long kbAtExecution = GC.GetTotalMemory(false) / 1024;
+
                         sw.Start();
+ 
+                        // do stuff that uses memory here 
+                       
                         st.BubbleSort(array);
                         sw.Stop();
+
+                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
+                        long kbAfter2 = GC.GetTotalMemory(true) / 1024;
+
+                        Console.WriteLine(kbAtExecution + " Started with this kb.");
+                        Console.WriteLine(kbAfter1 + " After the test.");
+                        Console.WriteLine(kbAfter1 - kbAtExecution + " Amt. Added.");
+                        Console.WriteLine(kbAfter2 + " Amt. After Collection");
+                        Console.WriteLine(kbAfter2 - kbAfter1 + " Amt. Collected by GC.");
                         var ts = sw.ElapsedMilliseconds;
-                     
 
                         string info = algorithm + "," + language + "," + j + "," + k + "," + ts;
+
+                        Console.WriteLine("info: " + info);
                         data.Add(info);
                     }
                 }
