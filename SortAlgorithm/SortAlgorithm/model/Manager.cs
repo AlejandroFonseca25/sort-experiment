@@ -82,9 +82,6 @@ namespace SortAlgorithm.Model
                         long kbAtExecution = GC.GetTotalMemory(true) / 1024;
 
                         sw.Start();
- 
-                        // do stuff that uses memory here 
-                       
                         st.BubbleSort(array);
                         sw.Stop();
 

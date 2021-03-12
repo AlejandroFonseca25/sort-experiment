@@ -36,17 +36,14 @@ public class Manager {
 
                 for (int i = 0; i < 100; i++)
                 {
-                	MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
-                    MemoryUsage beforeHeapMemoryUsage = mbean.getHeapMemoryUsage();
                 	
                     long timeOne = System.currentTimeMillis();
-
+                    Runtime runtime = Runtime.getRuntime();
+                    long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
                     st.MergeSort(array, 0, (array.length) - 1);
-                    
+                    long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
                     long timeTwo = System.currentTimeMillis();
-                    
-                    MemoryUsage afterHeapMemoryUsage = mbean.getHeapMemoryUsage();
-                    long consumed =  afterHeapMemoryUsage.getUsed() - beforeHeapMemoryUsage.getUsed();
+                    long consumed = usedMemoryAfter-usedMemoryBefore;
                     System.out.println("Total consumed Memory:" + consumed);
                     
                     long timeElapsed = timeTwo - timeOne;
@@ -76,25 +73,23 @@ public class Manager {
 
                 for (int i = 0; i < 100; i++)
                 {
-                	MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
-                    MemoryUsage beforeHeapMemoryUsage = mbean.getHeapMemoryUsage();
-                    
                     long timeOne = System.currentTimeMillis();
-                    
+                    Runtime runtime = Runtime.getRuntime();
+                    long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
                     st.BubbleSort(array);
-                    
+                    long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
                     long timeTwo = System.currentTimeMillis();
                     
-                    MemoryUsage afterHeapMemoryUsage = mbean.getHeapMemoryUsage();
-                    long consumed =  afterHeapMemoryUsage.getUsed() - beforeHeapMemoryUsage.getUsed();
+       
+                    long consumed = usedMemoryAfter-usedMemoryBefore;
                     System.out.println("Total consumed Memory:" + consumed);
                     
                     long timeElapsed = timeTwo - timeOne; 
                     
                     String info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
                     data.add(info);
-                    System.out.println("info " + info);
-                }
+                    System.out.println("info " + info);                 
+                }              
             }
         }
 
@@ -109,21 +104,31 @@ public class Manager {
         int max = Integer.MAX_VALUE;
         int min = 0;
 
-        for (int i = 0; i < size; i++)
+        switch (status)
         {
-            int number = (random.nextInt() * (min - max)) + min;
-            array[i] = number;
-
-            if (status == 2)//orden descendiente
-            {
-                max = (number + max) / 2;
-            }
-            else if (status == 3)// orden ascendiente
-            {
-                min = (min + number) / 2;
-            }
+            case 2:
+                // orden descendiente
+                for(int i = 0; i < size; i++)
+                {
+                    array[i] = size - i;
+                }
+                break;
+            case 3:
+                //orden ascendente;
+                for (int i = 0; i < size; i++)
+                {
+                    array[i] = i + 1; 
+                }
+                break;
+            default:
+                //aleatorio
+                for (int i = 0; i < size; i++)
+                {
+                    array[i] = (random.nextInt() * (min - max)) + min;
+                }
+                break;
         }
-
+        
         return array;
     }
 
