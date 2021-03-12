@@ -45,7 +45,7 @@ namespace SortAlgorithm.Model
                         st.MergeSort(array, 0, (array.Length) - 1);
                         sw.Stop();
 
-                        long kbAfter1 = GC.GetTotalMemory(true) / 1024;
+                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
                         long memoryUsed = kbAfter1 - kbAtExecution;
 
                         var ts = sw.ElapsedMilliseconds;
@@ -85,7 +85,7 @@ namespace SortAlgorithm.Model
                         st.BubbleSort(array);
                         sw.Stop();
 
-                        long kbAfter1 = GC.GetTotalMemory(true) / 1024;
+                        long kbAfter1 = GC.GetTotalMemory(false) / 1024;
                         long memoryUsed = kbAfter1 - kbAtExecution;
 
                         var ts = sw.ElapsedMilliseconds;

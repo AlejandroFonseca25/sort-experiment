@@ -1,8 +1,8 @@
 package model;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryMXBean;
-import java.lang.management.MemoryUsage;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -21,7 +21,7 @@ public class Manager {
         
     }
 
-    public void MergeSortExperiment()
+    public ArrayList<String>  MergeSortExperiment()
     {
         ArrayList<String> data = new ArrayList<String>();
 
@@ -36,29 +36,22 @@ public class Manager {
 
                 for (int i = 0; i < 100; i++)
                 {
-                	
                     long timeOne = System.currentTimeMillis();
-                    Runtime runtime = Runtime.getRuntime();
-                    long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
                     st.MergeSort(array, 0, (array.length) - 1);
-                    long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
                     long timeTwo = System.currentTimeMillis();
-                    long consumed = usedMemoryAfter-usedMemoryBefore;
-                    System.out.println("Total consumed Memory:" + consumed);
-                    
+                       
                     long timeElapsed = timeTwo - timeOne;
 
                     String info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
                     data.add(info);
-                    System.out.println("info " + info);
                 }
             }
         }
 
-        WriteData(data);
+        return data;
     }
 
-    public void BubbleSortExperiment()
+    public ArrayList<String>  BubbleSortExperiment()
     {
     	 ArrayList<String> data = new ArrayList<String>();
 
@@ -74,30 +67,23 @@ public class Manager {
                 for (int i = 0; i < 100; i++)
                 {
                     long timeOne = System.currentTimeMillis();
-                    Runtime runtime = Runtime.getRuntime();
-                    long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
                     st.BubbleSort(array);
-                    long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
                     long timeTwo = System.currentTimeMillis();
-                    
        
-                    long consumed = usedMemoryAfter-usedMemoryBefore;
-                    System.out.println("Total consumed Memory:" + consumed);
                     
                     long timeElapsed = timeTwo - timeOne; 
                     
                     String info = algorithm + "," + language + "," + j + "," + k + "," + timeElapsed;
-                    data.add(info);
-                    System.out.println("info " + info);                 
+                    data.add(info);        
                 }              
             }
         }
 
-        WriteData(data);
+        return data;
     }
 
     public int[] GenerateArray(int lenght, int status){
-        int size = lenghts.size();
+        int size = lenghts.get(lenght);
         int[] array = new int[size];
         Random random = new Random();
 
@@ -133,6 +119,16 @@ public class Manager {
     }
 
     public void WriteData(ArrayList<String> data){
-    	
+    	try {
+			BufferedWriter bw=new BufferedWriter(new FileWriter("data/Output.csv"));
+			for(String n:data){
+				bw.write(n+"\n");
+			}
+			bw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	 	
     }
 }
